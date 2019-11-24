@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@getHome');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/catalog', 'MoviesController@getIndex');
+
+Route::get('/catalog/show/{id}', 'MoviesController@getShow');
+
+Route::get('/catalog/create', 'MoviesController@getCreate');
+
+Route::get('/catalog/edit/{id}', 'MoviesController@getEdit');
