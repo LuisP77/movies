@@ -3,6 +3,11 @@
 @section('content')
   <div class="container">
     <div class="row">
+      <div class="col-md-12" style="padding:10px;">
+        <a href="{{ url('/catalog/create') }}" class="btn btn-primary">Agregar película</a>
+      </div>
+    </div>
+    <div class="row">
       @foreach( $arrayPeliculas as $key=>$pelicula )
         <div class="col-xs-6 col-sm-4 col-md-3 text-center">
           <a href="{{ url('/catalog/show/' . $key) }}">

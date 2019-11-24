@@ -189,6 +189,8 @@ class MoviesController extends Controller
 
     public function getEdit($id)
     {
-        return view( 'catalog.edit', array('id'=>$id));
+      $peliculas = $this->arrayPeliculas;
+      $pelicula = $peliculas[$id];
+        return view( 'catalog.edit', ['id'=>$id, 'pelicula'=>$pelicula]);
     }
 }
