@@ -2,11 +2,13 @@
 
 @section('content')
   <div class="container">
-    <div class="row">
-      <div class="col-md-12" style="padding:10px;">
-        <a href="{{ url('/catalog/create') }}" class="btn btn-primary"><i class="fas fa-plus"></i>Agregar película</a>
+    @if( Auth::check() )
+      <div class="row">
+        <div class="col-md-12" style="padding:10px;">
+          <a href="{{ url('/catalog/create') }}" class="btn btn-primary"><i class="fas fa-plus"></i>Agregar película</a>
+        </div>
       </div>
-    </div>
+    @endif
     <div class="row">
       @foreach( $arrayPeliculas as $key=>$pelicula )
         <div class="col-xs-6 col-sm-4 col-md-3 text-center">
